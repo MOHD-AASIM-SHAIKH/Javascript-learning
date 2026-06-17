@@ -26,5 +26,15 @@ bcrypt.compare(loginpass,storedhash, (err, result) => {
         console.log('Password is incorrect');
     }
 });
-
+bcrypt.compare(password,storedhash, (err, result) => {
+    if(err){
+        console.error('Error comparing password:', err);
+        return;
+    }
+    if(result){
+        console.log('Password is correct');
+    }else{
+        console.log('Password is incorrect');
+    }
+});
 });
